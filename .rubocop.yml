@@ -1,4 +1,4 @@
-require:
+plugins:
   - rubocop-performance
   - rubocop-rspec
 
@@ -6,8 +6,16 @@ AllCops:
   TargetRubyVersion: 3.4
   NewCops: enable
 
+Style/Documentation:
+  Enabled: false
+
 Layout/LineLength:
-  Max: 80
+  Max: 100
+
+Lint/MissingSuper:
+  AllowedParentClasses:
+    - Strategies::OfferStrategy
+    - Strategies::DeliveryStrategy
 
 Metrics/BlockLength:
   Exclude:
@@ -15,3 +23,9 @@ Metrics/BlockLength:
 
 RSpec:
   Enabled: true
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
